@@ -1,35 +1,37 @@
-
+//This will take a string and test to see if each char is unique
+// true = all chars unique
+// false = all chars are not unique
 
 console.log("Hello, World!");
 
 
-# this will take the input of a users
-function userInput(x)
+// this will take the input of a users
+function userInput()
 {
-	return "abc"
-	
+	var x = "Hello World";
+	return x;
 }
 
-#this will  return a string after recursivly bubble sort 
+//this will  return a string after recursivly bubble sort 
 function sort(string, pos)
 {
 	
 	var txt=string;
 	var sln = txt.length;
 	
-	#recursion escape
+	//recursion escape
 	if (pos>=sln-1)
 	{
 		return txt;
 	}
 	
-	#if pos and pos+1 are already sorted this will go to next pos
+	//if pos and pos+1 are already sorted this will go to next pos
 	else if ( txt.charAt(pos) <= txt.charAt(pos+1) )
 	{
-		return sort(txt, pos+1)
+		return sort(txt, pos+1);
 	}
 	
-	#if pos and pos+1 are not sorted this will sort and then go back to position 0
+	//if pos and pos+1 are not sorted this will sort and then go back to position 0
 	else 
 	{
 			var x=txt.charAt(pos);
@@ -37,12 +39,12 @@ function sort(string, pos)
 			var xy= x+y;
 			var yx= y+x;
 			txt.replace( xy, yx);
-			return sort( txt, 0 )
+			return sort( txt, 0 );
 	}
 	
 }
 
-#this will recursivly test a string to see if any char values are repeated
+//this will recursivly test a string to see if any char values are repeated
 function uniqueTest(string , pos)
 {
 	
@@ -58,26 +60,23 @@ function uniqueTest(string , pos)
 	}
 	else 
 	{
-		return (txt , pos+1)
+		return (txt , pos+1);
 		
 	}
 	
 }
 
-var x = (userInput(""));
-var sortedString =  sort( x , 0)
-var unique = uniqueTest(sortedString, 0)
+var x = (userInput());
+var sortedString =  sort( x , 0);
+var unique = uniqueTest(sortedString, 0);
 
 if(unique)
 {
-	console.log(" String is unique ")
+	console.log(" String is unique ");
 }
 	
 else
 {
-	console.log(" String is flase ")
+	console.log(" String is flase ");
 }
-
-
-
 
