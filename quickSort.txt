@@ -1,0 +1,85 @@
+// funtion runs a quick sort on strings
+// returns string value
+
+// may need to rearagnge functions depending on how they are pulled into the program to begin with.....
+// This is the partition step??? i think its referred to
+// This will sort a given set of a string based off of a pivot point
+function strPartition( string, posLeft, posRight )
+{
+	var txt = string; // can i pass string right back as string???
+	var sln = txt.length;
+	
+	var pivot =string.charAt( [ Math.floor( (posLeft + posRight) / 2) ] );
+	var left = posLeft;
+	var right = posRight;
+	
+	while ( left <= right )
+	{
+		while( txt.charAt(left) < pivot )
+		{
+			left++;
+		}
+		
+		while( txt.charAt(right) > pivot)
+		{
+			right--;
+		}
+		if (  left <= right) 
+		{
+		  swap( txt, left, right )
+		  left++;
+		  right--;
+		}
+	}
+	
+	return left;  // i need to return the left value and the string HHHMMMM
+}
+
+
+
+//Performs a swap on two char's inside of a string based off of index value
+function swap( string , firstIndex, secondIndex)
+{
+			var x=string.charAt(firstIndex);
+			var y=string.charAt(secondIndex);
+			string.replace( x, y);   //instead of replacing the value with another value
+			string.replace( y, x);   // I need to replace value at index with another value.... HMMMMM
+											// Thie will technically work as long as the string doesn't contain 
+											// the same char twice.. so ummmmmmm
+			
+
+}
+
+
+// In junction with a partition step this will perform a recursive quicksort call
+function strQuickSort( string, left, right)
+{
+	var pos = 0;
+	
+	//found this on the internet its supposed to be syntax for seting a 
+	// value to left and right if the user didnt enter one...
+	// should make it a much easier function to implement
+	
+	left = typeof left != "number" ? 0: left;
+	right =typeof right != "number" ? string.length -1 : right;
+	
+	if ( string.length > 1 ) 
+	{
+		pos = strPartition( string, left, right);
+		
+		if( left < pos-1)
+		{
+			strQuickSort( string, left, pos-1);
+		}
+		
+		if( pos < right)
+		{
+			strQuickSort(string, pos, right);
+		}
+		
+	}
+	
+	return string;
+}
+
+
