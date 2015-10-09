@@ -41,6 +41,7 @@ function sort(string, pos)
 			txt.replace( xy, yx);
 			return sort( txt, 0 );
 	}
+	return 1;
 	
 }
 
@@ -77,6 +78,6 @@ if(unique)
 	
 else
 {
-	console.log(" String is flase ");
+	console.log(" String is not unique ");
 }
 
